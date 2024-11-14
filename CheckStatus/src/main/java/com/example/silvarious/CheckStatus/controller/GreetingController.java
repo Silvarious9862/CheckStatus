@@ -1,4 +1,4 @@
-package com.example.silvarious.CheckStatus.Controller;
+package com.example.silvarious.CheckStatus.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
