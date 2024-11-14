@@ -9,7 +9,6 @@ import java.net.URL;
 @Component
 public class Site {
 
-    @NotBlank @org.hibernate.validator.constraints.URL
     private String url;
 
     private boolean available = false;

@@ -20,6 +20,8 @@ public class SiteService {
     Logger logger
             = LoggerFactory.getLogger(SiteService.class);
 
+    public SiteService() { this.site = new Site(); }
+
     public SiteService(Site site) {
         this.site = site;
     }
@@ -31,11 +33,11 @@ public class SiteService {
     public Optional<Site> checkSite(String url_str) {
         Optional<Site> site = Optional.empty();
         this.site.setUrl(url_str);
-        logger.info("Get URL: " + url_str);
+        logger.debug("Get URL: " + url_str);
         try {
             URL url = new URL(url_str);
             URLConnection urlConnection = url.openConnection();
-            logger.info("Connecting to " + url.toString() + "...");
+            logger.debug("Connecting to " + url.toString() + "...");
             if(urlConnection.getContent() != null) {
                 logger.info(url.toString() + " available");
                 this.site.setAvailable(true);
