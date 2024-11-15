@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @Service
 public class SiteService {
-    Site site;
+    Site site = new Site();
     Logger logger
             = LoggerFactory.getLogger(SiteService.class);
 

@@ -6,16 +6,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-
-public class SiteServiceTest {
-
-    private SiteService siteService = new SiteService("http://www.youtube.com");
+class SiteServiceTest {
 
     @Test
-    public void shouldAvailable() {
-        Optional<Site> result = siteService.checkSite("http://www.youtube.com");
-        Site site = result.get();
-        Assertions.assertEquals("http://www.youtube.com", site.getUrl());
-        Assertions.assertTrue(site.isAvailable());
+    void checkSiteTrueTest() {
+        SiteService siteService = new SiteService();
+        Optional<Site> result = siteService.checkSite("http://youtube.com");
+        Site resultSite = result.get();
+
+        Assertions.assertTrue(resultSite.isAvailable());
+
+    }@Test
+    void checkSiteFalseTest() {
+        SiteService siteService = new SiteService();
+        Optional<Site> result = siteService.checkSite("http://youtube.code");
+        Site resultSite = result.get();
+
+        Assertions.assertFalse(resultSite.isAvailable());
     }
+
 }

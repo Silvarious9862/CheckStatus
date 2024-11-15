@@ -9,7 +9,7 @@ import java.net.URL;
 @Component
 public class Site {
 
-    private String url;
+    private String url = "";
 
     private boolean available = false;
 
