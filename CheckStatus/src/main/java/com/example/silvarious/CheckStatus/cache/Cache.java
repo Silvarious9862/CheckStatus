@@ -3,15 +3,15 @@ package com.example.silvarious.CheckStatus.cache;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Cache<K, V> {
+public class Cache<Key, Value> {
 
-    private final Map<K, V> cache = new ConcurrentHashMap<>();
+    private final Map<Key, Value> cache = new ConcurrentHashMap<>();
 
-    public V get(K key) {
+    public Value get(Key key) {
         return cache.get(key);
     }
 
-    public void put(K key, V value) {
+    public void put(Key key, Value value) {
         cache.put(key, value);
     }
 
@@ -19,7 +19,7 @@ public class Cache<K, V> {
         cache.clear();
     }
 
-    public boolean containsKey(K key) {
+    public boolean containsKey(Key key) {
         return cache.containsKey(key);
     }
 }
