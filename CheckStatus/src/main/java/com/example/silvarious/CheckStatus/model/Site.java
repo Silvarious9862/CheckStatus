@@ -9,9 +9,15 @@ import java.net.URL;
 @Component
 public class Site {
 
+    //private String url;
     private String url = "";
 
     private boolean available = false;
+
+    public Site() {
+        this.url = "www";
+        this.available = false;
+    }
 
     public String getUrl() {
         return url;
