@@ -19,6 +19,11 @@ public class Site {
         this.available = false;
     }
 
+    public Site(Site site) {
+        this.url = site.getUrl();
+        this.available = site.isAvailable();
+    }
+
     public String getUrl() {
         return url;
     }

@@ -33,6 +33,7 @@ public class SiteService {
 
     public Optional<Site> checkSite(String url_str) {
 
+        Site newsite;
         Optional<Site> site = Optional.empty();
         this.site.setUrl(url_str);
 
@@ -61,8 +62,10 @@ public class SiteService {
         }
         site = site.of(this.site);
 
-        if(!cache.containsKey(url_str))
-            cache.put(url_str, this.site);
+        if(!cache.containsKey(url_str)) {
+            newsite = new Site(this.site);
+            cache.put(url_str, newsite);
+        }
 
         return site;
     }
