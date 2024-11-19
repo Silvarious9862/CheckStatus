@@ -27,19 +27,16 @@ class SiteServiceTest {
     void checkSiteTrueTest() {
         Mockito.when(cache.containsKey("http://youtube.com")).thenReturn(false);
 
-        Optional<Site> result = siteService.checkSite("http://youtube.com");
-        Site resultSite = result.get();
+        Site resultSite = siteService.checkSite("http://youtube.com");
 
         Assertions.assertTrue(resultSite.isAvailable());
-
     }
 
     @Test
     void checkSiteFalseTest() {
         Mockito.when(cache.containsKey("http://youtube.code")).thenReturn(false);
 
-        Optional<Site> result = siteService.checkSite("http://youtube.code");
-        Site resultSite = result.get();
+        Site resultSite = siteService.checkSite("http://youtube.code");
 
         Assertions.assertFalse(resultSite.isAvailable());
     }
@@ -52,8 +49,7 @@ class SiteServiceTest {
         Mockito.when(cache.containsKey(url)).thenReturn(true);
         Mockito.when(cache.get(url)).thenReturn(site);
 
-        Optional<Site> result = siteService.checkSite(url);
-        Site resultSite = result.get();
+        Site resultSite = siteService.checkSite(url);
 
         Assertions.assertTrue(resultSite.isAvailable());
     }
