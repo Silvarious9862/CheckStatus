@@ -12,7 +12,7 @@
 	<artifactId>CheckStatus</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CheckStatus</name>
-	<description>Checks status of the given server</description>
+	<description>Checks status of the given server by http/https protocol</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -45,7 +45,29 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.17.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.6.1.Final</version>
+		</dependency>
+    </dependencies>
+
+
 
 	<build>
 		<plugins>

@@ -1,17 +1,21 @@
 package com.example.silvarious.CheckStatus.model;
 
-import jakarta.validation.constraints.NotBlank;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
+import jakarta.persistence.*;
 import java.net.URL;
 
-@Component
+@Entity
+@Table(name="site_table")
 public class Site {
 
-    //private String url;
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "url")
     private String url = "";
 
+    @Column(name = "available")
     private boolean available = false;
 
     public Site() {
